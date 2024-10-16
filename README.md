@@ -50,22 +50,27 @@ Both `.env` files have corresponding `.env.example` files that you can use as a 
   pipenv shell
 ```
 
-3. Run database migrations:
-```bash
-  python manage.py migrate
-```
-
 4. Start the PostgreSQL and pgAdmin services using Docker Compose:
 ```bash
   docker-compose up -d
 ```
 
-5. Run the development server:
+5. Run database migrations:
+```bash
+  python manage.py migrate
+```
+
+6. Run the development server:
 ```bash
   python manage.py runserver
 ```
 
-6. Access the Django Admin in your browser:
+7. Create a superuser to access the Django admin:
+```bash
+  python manage.py createsuperuser
+```
+
+8. Access the Django Admin in your browser:
 ```
   http://127.0.0.1:8000/admin
 ```
