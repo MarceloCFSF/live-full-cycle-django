@@ -5,8 +5,8 @@ from django.forms import ValidationError
 class Video(models.Model):
   title = models.CharField(max_length=100, unique=True, verbose_name='Título')
   description = models.TextField(verbose_name='Descrição')
-  thumbnail = models.ImageField(upload_to='media/thumbnails/', verbose_name='Miniatura', null=True)
-  video = models.FileField(upload_to='media/videos/', verbose_name='Vídeo', null=True)
+  thumbnail = models.ImageField(upload_to='thumbnails/', verbose_name='Miniatura', null=True)
+  video = models.FileField(upload_to='videos/', verbose_name='Vídeo', null=True)
   slug = models.SlugField(max_length=100, unique=True)
   published_at = models.DateTimeField(verbose_name='Publicado em', editable=False, null=True)
   is_published = models.BooleanField(default=False, verbose_name='Está publicado')
