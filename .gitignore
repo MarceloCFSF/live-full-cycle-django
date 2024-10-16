@@ -1,3 +1,4 @@
 .tool-versions
 db.sqlite3
 .env
+media
