@@ -10,6 +10,7 @@ class Video(models.Model):
   is_published = models.BooleanField(default=False, verbose_name='Está publicado')
   num_likes = models.IntegerField(default=0, verbose_name='Número de curtidas')
   num_views = models.IntegerField(default=0, verbose_name='Número de visualizações')
+  tags = models.ManyToManyField('Tag', verbose_name='Tags')
 
   class Meta:
     verbose_name = 'Vídeo'
@@ -17,4 +18,10 @@ class Video(models.Model):
   
   def __str__(self):
     return self.title
+  
+class Tag(models.Model):
+  name = models.CharField(max_length=50, unique=True, verbose_name='Nome')
+  
+  def __str__(self):
+    return self.name
   
